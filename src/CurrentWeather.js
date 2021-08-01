@@ -4,7 +4,7 @@ import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./CurrentWeather.css";
 
-export default function Weather(props) {
+export default function CurrentWeather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
@@ -41,7 +41,7 @@ export default function Weather(props) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
-          <div className="form-row">
+          <div className="row">
             <div className="col-8">
               <input
                 type="search"
@@ -51,9 +51,8 @@ export default function Weather(props) {
                 onChange={handleCityChange}
               />
             </div>
-            <div className="col-2">
+            <div className="col-2 btn">
               <input
-                id="searchButton"
                 type="submit"
                 value="Search"
                 className="btn btn-primary"
@@ -62,12 +61,12 @@ export default function Weather(props) {
             <div className="col-2 btn">
             <input
               type="button"
+              value="Current"
               className="btn btn-primary"
               id="locationButton"
-              value="Current"
+              
             />
           </div>
-
           </div>
         </form>
         <WeatherInfo data={weatherData} />
