@@ -1,0 +1,9 @@
+h1 {
+  font-size: 50px;
+  padding-top: 30px;
+}
+.cityOverview {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
