@@ -1,31 +1,39 @@
 import React from "react";
-import FormatDate from "./FormatDate";
-import WeatherIcon from "./WeatherIcon";
-import WeatherTemperature from "./WeatherTemperature";
+import CurrentDate from "./CurrentDate";
+import Icons from "./Icons";
+import TemperatureUnits from "./TemperatureUnits";
 
 export default function WeatherInfo(props) {
   return (
     <div className="WeatherInfo">
-      <h1>{props.data.city}</h1>
-        <span>
-          <FormatDate date={props.data.date} />
-        </span>
-
-        <div class="row justify-content-around">
-        <div className="col-4" id="floatLeft">
-          <div className="clearfix">
-              <WeatherIcon code={props.data.icon} size={52} />
-              <WeatherTemperature celsius={props.data.temperature} />
+      <div className="row">
+        <div className="col-6">
+          <div className="current-location">
+            <h1>
+              <span id="current-city">{props.info.city}</span>
+            </h1>
+            <div id="current-date">
+              <CurrentDate date={props.info.date} />
             </div>
           </div>
-        </div>
-        <div className="col-4" id="floatRight">
-          <ul>
-            <li>{props.data.description}</li>
-            <li>Humidity: {props.data.humidity}%</li>
-            <li>Wind: {props.data.wind} km/h</li>
+          <ul className="current-weather">
+            <li id="humidity">Humidity: {props.info.humidity}%</li>
+            <li id="wind">Wind speed: {Math.round(props.info.wind)} m/s</li>
           </ul>
         </div>
+        <div className="col-6 text-center description-temp">
+          <Icons
+            icon={props.info.icon}
+            size={85}
+            alt={props.info.description}
+          />
+          <br />
+          <h2 id="description">{props.info.description}</h2>
+          <div className="temp-units">
+            <TemperatureUnits celsius={props.info.temperature} />
+          </div>
+        </div>
       </div>
+    </div>
   );
 }

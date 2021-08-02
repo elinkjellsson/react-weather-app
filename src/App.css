@@ -17,12 +17,22 @@
     rgb(255, 177, 177) 90%
   );
 }
-footer {
+.App footer {
   display: block;
   margin: 0 auto;
   text-align: center;
   font-family: monospace;
-  opacity: 0.8;
+  color: grey;
+}
+
+.App #open-source-link {
+  text-decoration: none;
+  color: grey;
+}
+
+.App #open-source-link:hover {
+  text-decoration: underline;
+  transition: all 200ms ease;
 }
 .form-row {
   box-sizing: border-box;
