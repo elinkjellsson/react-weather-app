@@ -22,7 +22,7 @@ footer {
   margin: 0 auto;
   text-align: center;
   font-family: monospace;
-  opacity: 80%;
+  opacity: 0.8;
 }
 .form-row {
   box-sizing: border-box;
